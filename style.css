@@ -1,5 +1,5 @@
 :root {
-  --header-before-bg: #9f9f9f;
+  --header-before-bg: #09090987;
   --white: #ffffff;
 }
 
@@ -16,7 +16,8 @@ a {
 
 body {
   min-width: 320px;
-  background-color: #707070;
+  /* background-color: #707070; */
+  background-color: #fff9e6;
   padding: 10px 30px;
   display: flex;
   flex-direction: column;
@@ -25,7 +26,9 @@ body {
 }
 
 section {
+  width: 100%;
   max-width: 1850px;
+  overflow: hidden;
 }
 /* header start ============================================================================*/
 .header_container {
@@ -42,10 +45,14 @@ section {
 header {
   width: 572px;
   height: 72px;
-  background-image: url(/images/Vector.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+}
+header > img {
+  position: absolute;
+  /* top: 0; */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  pointer-events: none;
 }
 
 .header_elements {
@@ -66,6 +73,8 @@ header {
   font-weight: 400;
   padding-left: 5px;
   color: #0d0d0d;
+  position: relative;
+  z-index: 6;
 }
 
 /* hamburger menu start */
@@ -90,7 +99,7 @@ header {
   height: 2px;
   background-color: #ecf0f1;
   display: block;
-  margin: 4px auto;
+  margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -151,11 +160,14 @@ nav > a::before {
   background-color: var(--header-before-bg);
   position: absolute;
   top: -20px;
-  left: -23px;
+  left: -22px;
   z-index: -1;
 }
 nav > a:nth-child(1)::before {
   left: -22px;
+}
+nav > a:nth-child(2)::before {
+  width: 106px;
 }
 nav > a:nth-child(3)::before {
   left: -25px;
@@ -203,6 +215,7 @@ nav > a:nth-child(3)::before {
   height: max-content;
   max-height: 1000px;
   position: relative;
+  margin-bottom: 140px;
 }
 
 .second_banner img {
@@ -241,3 +254,51 @@ nav > a:nth-child(3)::before {
   background-color: #ba0001;
 }
 /* second banner end ============================================================================*/
+
+/* animated banner start ============================================================================*/
+@keyframes loop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animated_banner {
+  width: 100%;
+  height: 100%;
+  max-height: 580px;
+  position: relative;
+  background-color: #fff9e6;
+  background-image: url(/images/banner_5.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.animated_banner > img {
+  height: 100%;
+  padding: 40px 0;
+  max-width: 472px;
+  float: right;
+}
+.moving_baner {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  animation-name: loop;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-duration: 20s;
+}
+
+.moving_baner.second {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+  animation-direction: reverse;
+}
+
+/* animated banner end ============================================================================*/
