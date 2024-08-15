@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Art Wine Rap</title>
     <link rel="stylesheet" href="style.css">
 
     <!-- fonts -->
@@ -12,31 +12,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
     <!-- fonts -->
+
+    <script src="/main.js" defer></script>
 </head>
 
 <body>
-    <section class="header_container">
+    <script>
 
-        <header>
-            <img src="/images/Vector.svg" alt="">
-            <div class="header_elements">
-                <div class="hamburger" id="hamburger-1">
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
-                </div>
+    </script>
 
-                <nav>
-                    <a href="">Art</a>
-                    <a href="">Wine</a>
-                    <a href="">Tickets</a>
-                </nav>
-
-                <a href="">Contact</a>
-            </div>
-
-        </header>
-    </section>
+    <section id="header" style="margin: 0;"></section>
 
     <section class="banner_container">
         <div class="banner_element">
@@ -189,17 +174,28 @@
         </div>
 
     </section>
-    <!-- hamburger menu animation -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const hamburger = document.querySelector(".hamburger");
 
-            hamburger.addEventListener("click", function () {
-                this.classList.toggle("is-active");
-            });
-        });
-    </script>
+    <section class="request_info">
+        <img src="/images/oh_yes.svg" alt="">
+        <p>The date of the event is June 24, at 18:00. <br>
+            Join us in the cozy gallery 'ArtVino' in the heart <br>
+            of the cultural city of Barcelona, at 78 Calle Liberta, 5nd floor.</p>
+        <form action="" method="post">
+            <div class="top_inputs">
+                <input type="text" placeholder="First name">
+                <input type="text" placeholder="Last name">
+                <input type="text" placeholder="Email address">
+                <input type="text" placeholder="Phone number">
+            </div>
+            <input type="text" placeholder="Write a question or comment">
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <section id="footer" style="margin: 0;""></section>
     <!-- hamburger menu animation -->
+
+        <!-- hamburger menu animation -->
 
 </body>
 
