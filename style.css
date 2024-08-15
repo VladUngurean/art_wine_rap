@@ -1,6 +1,7 @@
 :root {
   --header-before-bg: #09090987;
   --main-color: #fff9e6;
+  --main-red: #ba0001;
 }
 
 * {
@@ -11,7 +12,9 @@
   /* transition: all 3s; */
   outline: none;
 }
-
+*:hover {
+  /* cursor: url(/images/svg/paw.svg), auto !important; */
+}
 a {
   text-decoration: none;
   color: black;
@@ -22,7 +25,7 @@ button {
 }
 
 body {
-  /* cursor: url(/images/paw.svg), auto; */
+  /* cursor: url(/images/svg/paw.svg), auto; */
   min-width: 320px;
   background-color: var(--main-color);
   padding: 10px 30px;
@@ -155,19 +158,111 @@ nav::before {
 
 /* nav end */
 
-.open_header {
+.nav_conatainer {
   display: none;
   width: 100vw;
   max-width: unset;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 0;
   /* left: 0; */
   right: 0;
   z-index: 20;
-  background-color: rgba(2, 4, 3, 1);
+  background-color: var(--main-color);
   /* background-color: rgba(2, 4, 3, 0.5); */
   overflow: hidden;
+  margin: unset;
+  padding: 60px;
+}
+
+.nav_conatainer.active {
+  display: block;
+}
+body.active {
+  overflow: hidden;
+}
+
+.nav_content {
+  width: 100%;
+  height: 100%;
+  border-radius: 80px;
+  background-color: var(--main-red);
+  /* position: relative; */
+  padding: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.nav_content_top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.nav_content_top > button {
+  background-color: transparent;
+  padding: 10px 30px;
+  border-radius: 50px;
+  border: var(--main-color) 1px solid;
+  font-size: 16px;
+  color: var(--main-color);
+  cursor: pointer;
+}
+
+.close_button {
+  background-color: var(--main-color);
+  padding: 10px 70px;
+  border-radius: 50px;
+  border: var(--main-color) 1px solid;
+  font-size: 16px;
+  color: black;
+  cursor: pointer;
+}
+.nav_content_mid {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.nav_content_bot {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.header_social_media {
+  /* width: 100%; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 20px;
+  font-size: 16px;
+}
+
+.header_social_media > a {
+  color: var(--main-color);
+}
+
+.header_language {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  gap: 20px;
+  color: var(--main-color);
+}
+
+.header_language p:nth-child(2) {
+  opacity: 0.6;
 }
 /* header end ============================================================================*/
 
@@ -246,7 +341,7 @@ nav::before {
   border-radius: 100px;
 }
 .second_banner_info span:last-child {
-  background-color: #ba0001;
+  background-color: var(--main-red);
 }
 /* second banner end ============================================================================*/
 
@@ -265,7 +360,7 @@ nav::before {
   max-height: 580px;
   position: relative;
   background-color: var(--main-color);
-  background-image: url(/images/banner_5.svg);
+  background-image: url(/images/svg/banner_5.svg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -394,7 +489,7 @@ nav::before {
   width: 100vw;
   max-width: unset;
   text-align: center;
-  background-color: #ba0001;
+  background-color: var(--main-red);
   padding: 140px 30px;
   display: flex;
   align-items: center;
@@ -462,7 +557,7 @@ nav::before {
 .dot_black {
   width: 20px;
   height: 20px;
-  background-color: #ba0001;
+  background-color: var(--main-red);
   border-radius: 50%;
 }
 
@@ -537,7 +632,7 @@ nav::before {
   border: none;
   padding: 20px;
   border-radius: 50px;
-  background-color: #ba0001;
+  background-color: var(--main-red);
   color: var(--main-color);
   font-size: 20px;
   font-weight: 400;
@@ -558,6 +653,7 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   padding: 40px 0;
+  background-color: var(--main-color);
 }
 footer > img {
   display: inline-block;
@@ -588,7 +684,7 @@ footer > img {
   gap: 20px;
 }
 .footer_menu > div {
-  color: #ba0001;
+  color: var(--main-red);
   font-size: 22px;
 }
 .footer_menu > a {
@@ -597,3 +693,11 @@ footer > img {
 }
 
 /* footer end ============================================================================*/
+
+/* past events start */
+
+.body_past_events {
+  background-color: #020403;
+}
+
+/* past events end */
