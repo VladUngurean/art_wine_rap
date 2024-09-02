@@ -45,6 +45,9 @@ blurDivs.forEach(div => {
 
     function loaded() {
         div.classList.add("loaded")
+        setTimeout(() => {
+            div.style.backgroundImage = "unset";
+        }, 200);
     }
 
     if (img.complete) {
