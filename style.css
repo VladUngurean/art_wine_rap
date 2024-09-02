@@ -277,12 +277,55 @@ body.active {
   margin-bottom: 10px;
   /* max-height: 950px; */
 }
-.banner_container img {
+
+.banner_container .blur_img_load img {
   width: 100%;
   height: 100%;
   max-height: 950px;
-  object-fit: cover;
   border-radius: 88px;
+  object-position: center;
+  object-fit: cover;
+}
+
+.blur_img_load {
+  position: relative;
+  border-radius: 88px;
+  background-size: cover;
+  background-position: center;
+}
+
+.blur_img_load::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  animation: pulse 2.5s infinite;
+  -moz-animation: pulse 2.5s infinite;
+  -o-animation: pulse 2.5s infinite;
+}
+
+.blur_img_load.loaded::before {
+  content: unset;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: rgba(255, 255, 255, 0);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+
+.blur_img_load > img {
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+.blur_img_load.loaded > img {
+  opacity: 1;
 }
 
 .banner_element {
@@ -304,6 +347,7 @@ body.active {
 /* second banner start ============================================================================*/
 .second_banner {
   width: 100%;
+  height: 100%;
   height: max-content;
   max-height: 1000px;
   position: relative;
@@ -315,6 +359,7 @@ body.active {
   object-fit: cover;
   border-radius: 88px;
 }
+
 .second_banner svg {
   width: 100%;
   height: min-content;
@@ -365,7 +410,15 @@ body.active {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.animated_banner > img {
+
+.animated_banner > .blur_img_load {
+  border-radius: unset;
+}
+.animated_banner > .blur_img_load > img {
+  object-fit: cover;
+  object-position: center;
+}
+.animated_banner > .blur_img_load {
   height: 100%;
   padding: 40px 0;
   max-width: 472px;
@@ -376,6 +429,7 @@ body.active {
   flex-direction: row;
   position: absolute;
   top: 0;
+  z-index: 2;
   animation-name: loop;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -540,7 +594,8 @@ body.active {
   max-height: 460px;
   text-align: start;
   font-size: 22px;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .about_wine_info_element > img {
   width: 100%;
