@@ -17,13 +17,9 @@
 *:hover {
   /* cursor: url(/images/svg/paw.svg), auto !important; */
 }
-a {
-  text-decoration: none;
-  color: black;
-}
 
-button {
-  cursor: pointer;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -44,6 +40,15 @@ section {
   max-width: 1850px;
   overflow: hidden;
   margin-bottom: 140px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  cursor: pointer;
 }
 
 img {
