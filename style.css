@@ -24,9 +24,11 @@ html {
 
 body {
   /* cursor: url(/images/svg/paw.svg), auto; */
+  max-width: 1920px;
   min-width: 320px;
   background-color: var(--main-color);
   padding: 10px 30px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -430,7 +432,7 @@ body.active {
   }
 }
 .animated_banner {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   max-height: 580px;
   position: relative;
@@ -438,6 +440,8 @@ body.active {
   background-image: url(/images/svg/banner_5.svg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: left;
+  max-width: 1920px;
 }
 
 .animated_banner > .blur_img_load {
@@ -452,9 +456,9 @@ body.active {
   aspect-ratio: 1/1.08;
 }
 .animated_banner > .blur_img_load {
-  width: 100%;
+  width: calc(100px + 26vw);
   height: 100%;
-  padding: 40px 0;
+  padding: 40px 0 39px;
   max-width: 463px;
   float: right;
   aspect-ratio: 1/1.08;
@@ -751,6 +755,11 @@ body.active {
 /* request info end ============================================================================*/
 
 /* footer start ============================================================================*/
+
+#footer {
+  width: 100vw;
+  max-width: 1920px;
+}
 
 footer {
   width: 100%;
