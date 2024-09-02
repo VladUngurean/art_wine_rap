@@ -1,0 +1,9 @@
+@media (min-width: 1920px) {
+  /* body {
+    background-color: rebeccapurple;
+  } */
+
+  :root {
+    --width-related: 107px;
+  }
+}
