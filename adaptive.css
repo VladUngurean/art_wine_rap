@@ -6,4 +6,7 @@
   :root {
     --width-related: 107px;
   }
+  section {
+    margin-bottom: 140px;
+  }
 }
