@@ -12,7 +12,7 @@
   box-sizing: border-box;
   font-family: "PT Sans Caption", sans-serif;
   /* transition: all 3s; */
-  outline: none;
+  /* outline: auto; */
 }
 *:hover {
   /* cursor: url(/images/svg/paw.svg), auto !important; */
@@ -57,8 +57,14 @@ img {
   display: block;
 }
 /* header start ============================================================================*/
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .header_container {
-  width: 100vw;
+  width: 100%;
   /* background-color: #858585; */
   display: flex;
   flex-direction: column;
@@ -91,6 +97,10 @@ header > img {
   padding-right: 42px;
   justify-content: flex-start;
   gap: 30px;
+}
+
+.header_logo {
+  display: none;
 }
 
 .header_elements > a {
@@ -179,15 +189,13 @@ nav::before {
   max-width: unset;
   height: 100vh;
   position: fixed;
-  top: 0;
-  /* left: 0; */
-  right: 0;
+  inset: 0;
   z-index: 20;
   background-color: var(--main-color);
   /* background-color: rgba(2, 4, 3, 0.5); */
   overflow: hidden;
   margin: unset;
-  padding: 60px;
+  padding: calc(var(--width-related) - 20px);
 }
 
 .nav_conatainer.active {
@@ -209,6 +217,8 @@ body.active {
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
+
+  transition: padding 1s ease-in-out;
 }
 .nav_content_top {
   width: 100%;
@@ -225,6 +235,8 @@ body.active {
   font-size: 16px;
   color: var(--main-color);
   cursor: pointer;
+
+  transition: padding 1s ease-in-out;
 }
 
 .close_button {
@@ -235,6 +247,8 @@ body.active {
   font-size: 16px;
   color: black;
   cursor: pointer;
+
+  transition: padding 1s ease-in-out;
 }
 .nav_content_mid {
   width: 100%;
@@ -245,12 +259,17 @@ body.active {
   gap: 35px;
 }
 
+.nav_content_mid > a > img {
+  width: 100%;
+}
+
 .nav_content_bot {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
+  gap: 20px;
 }
 
 .header_social_media {
@@ -290,6 +309,7 @@ body.active {
   gap: 15px;
   margin-bottom: 15px;
   /* max-height: 950px; */
+  transition: margin-top 0.5s ease-in-out;
 }
 
 .banner_container .blur_img_load img {
@@ -542,7 +562,6 @@ body.active {
   width: 100%;
   height: auto;
   aspect-ratio: 1 / 1;
-  transition: all;
   position: relative;
   z-index: 1;
   object-fit: cover;
