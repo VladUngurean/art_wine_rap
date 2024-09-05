@@ -5,17 +5,101 @@
 
   :root {
     --width-related: 107px;
+
+    --width-related-dots: 70px;
+    --width-related-dots-black: 70px;
   }
   section {
     margin-bottom: 140px;
   }
+
+  .gallery_element {
+    padding: 100px;
+  }
+
+  .about_wine_info .about_wine_info_element:nth-child(1),
+  .about_wine_info .about_wine_info_element:nth-child(4) {
+    padding: 100px;
+  }
+
+  .body_past_events {
+    margin-top: 150px;
+  }
+}
+
+/* @media (max-width: 1540px) ====================================================================== */
+@media (max-width: 1540px) {
+  footer {
+    max-height: unset;
+  }
+  .footer_links {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 35px;
+  }
+}
+
+/* @media (max-width: 1447px) ====================================================================== */
+@media (max-width: 1447px) {
+  .gallery_elements {
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  }
+
+  .past_event h4 {
+    font-size: 18px;
+  }
+
+  .past_event > p {
+    font-size: 16px;
+  }
+}
+
+/* @media (max-width: 1291px) ====================================================================== */
+@media (max-width: 1291px) {
+  .about_wine_info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* @media (max-width: 1250px) ====================================================================== */
+@media (max-width: 1250px) {
 }
 
 /* @media (max-width: 1200px) ====================================================================== */
 @media (max-width: 1200px) {
+  body {
+    padding: 10px 20px;
+  }
 }
+
+/* @media (max-width: 900px) ====================================================================== */
+@media (max-width: 900px) {
+  .about_wine_info {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .about_wine_info_element:nth-child(3) {
+    order: 4;
+  }
+
+  .past_events {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* @media (max-width: 730px) ====================================================================== */
+@media (max-width: 730px) {
+  .gallery_elements {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* @media (max-width: 700px) ====================================================================== */
 @media (max-width: 700px) {
+  body {
+    padding: 10px;
+  }
+
   header > img,
   nav,
   .header_elements > a {
@@ -37,10 +121,12 @@
 
   .header_elements {
     justify-content: space-between;
+    padding: 0 26px 0 10px;
   }
 
   .banner_container {
     margin-top: 90px;
+    gap: 5px;
   }
 
   .nav_content {
@@ -49,14 +135,77 @@
 
   .nav_content_top > button,
   .close_button,
-  .header_social_media {
+  .header_social_media,
+  .second_banner_info span {
     font-size: 14px;
   }
   .close_button {
     padding: 10px 30px;
   }
-  .nav_content_top > button {
+  .nav_content_top > button,
+  .second_banner_info span {
     padding: 10px;
+  }
+
+  .second_banner_info {
+    gap: 5px;
+  }
+
+  .second_banner img {
+    aspect-ratio: 1;
+  }
+  /* //top baner */
+
+  .banner_element {
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .grid_el_1 {
+    grid-area: grid_el_1;
+  }
+  .grid_el_2 {
+    grid-area: grid_el_2;
+  }
+  .grid_el_3 {
+    grid-area: grid_el_3;
+  }
+
+  .banner_container {
+    grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+    grid-template-areas:
+      "grid_el_1  grid_el_3"
+      "grid_el_2 grid_el_2";
+  }
+
+  .banner_element:nth-child(1) svg,
+  .banner_element:nth-child(3) svg {
+    width: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  /* //top baner */
+
+  .moving_baner > img {
+    height: 25px;
+  }
+  .animated_banner > .blur_img_load {
+    padding: 25px 0 24px;
+  }
+
+  .gallery > p,
+  .about_wine_info_element > p,
+  .request_info > p {
+    font-size: 18px;
+  }
+
+  .about_wine_info_element > div {
+    font-size: 28px;
+  }
+
+  footer {
+    padding: 20px 0;
   }
 }
 
@@ -65,11 +214,31 @@
   .nav_conatainer {
     padding: 20px;
   }
+
+  .past_events {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 /* @media (max-width: 450px) ====================================================================== */
 @media (max-width: 450px) {
   .nav_content_bot {
     flex-direction: column;
+  }
+
+  .gallery_elements {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .banner_container {
+    grid-template-columns: 1fr; /* Two equal-width columns */
+    grid-template-areas:
+      "grid_el_1"
+      "grid_el_2"
+      "grid_el_3";
+  }
+
+  .top_inputs {
+    grid-template-columns: repeat(1, 1fr);
   }
 }

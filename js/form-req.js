@@ -92,3 +92,11 @@ async function YesYesYes() {
 // 		// localStorage.setItem(TIMESTAMP_KEY, currentTime.toString());
 // 	}
 // });
+
+
+let submitForm = document.getElementById("submitForm")
+submitForm.addEventListener("submit", (e)=> {
+	e.preventDefault();
+	alert("Message sent succesefully, check your email!")
+	window.location.href = "index.html";
+})
